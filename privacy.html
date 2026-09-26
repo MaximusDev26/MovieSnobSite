@@ -39,11 +39,12 @@
   <p>If sync is off, your data stays on your device only.</p>
 
   <h2>4. Our Server</h2>
-  <p>We operate a small server, hosted by Cloudflare, that does four things.</p>
+  <p>We operate a small server, hosted by Cloudflare, that does five things.</p>
   <p>Movie information relay. Movie information requests from your device go through our server, which forwards them to The Movie Database and returns the results, so our access credentials are not embedded in the App. The relay receives your device's IP address and the movie or search term you are looking up — not your name, email, Apple ID, movie logs, ratings, notes, or watchlist. We do not keep logs of these requests. To protect the service from abuse, each IP address is limited to a number of requests per minute; that count is held in memory only briefly and is not stored.</p>
   <p>Accounts. If you create an account, the server stores the account information in Section 2, plus the sign-in sessions for your devices (which expire after 60 days and record the app's device type) and short-lived counters that include your IP address, used to slow down password guessing. Expired sessions and counters are cleared out automatically.</p>
   <p>Friends. If you turn on Friends, the server stores the Friends information in Section 2 and shows your shared list only to people you have both accepted as friends, who have not been blocked by either of you, and only while "Share my rankings with friends" is on.</p>
   <p>Community scores. The anonymous scores in Section 2, stored under a scrambled random identifier.</p>
+  <p>Notifications. If you use Friends and allow notifications, we store the push token Apple issues for your phone, your time zone (so we never notify you between 10 PM and 8 AM) and a record of what we sent, linked to your account, so we can tell you when a friend adds you, accepts, tags you, or sends you a pick or a question. Apple delivers them; they contain names and film titles only, never scores. Turning notifications off, signing out or deleting your account removes the token.</p>
 
   <h2>5. Third-Party Services We Use</h2>
 
@@ -71,6 +72,11 @@
     <div class="service">Cloudflare</div>
     <div class="detail">Hosts our server and its database</div>
     <div class="detail">Receives: everything our server receives (Section 4), as our service provider</div>
+  </div>
+  <div class="card">
+    <div class="service">Apple Push Notification service</div>
+    <div class="detail">Delivers friend notifications</div>
+    <div class="detail">Receives: your phone's push token and the notification's text (names and film titles)</div>
   </div>
   <div class="card">
     <div class="service">Resend</div>
@@ -114,7 +120,7 @@
   <h2>8. Keeping and Deleting Your Data</h2>
   <p>Data stored only on your device is deleted when you delete the App.</p>
   <p>Data synced through CloudKit lives in your own iCloud account. Deleting the App does not automatically delete it — that is how iCloud works for every app. You can manage or delete it through your Apple iCloud account settings.</p>
-  <p>You can export a CSV copy of your diary and watchlist at any time from Settings &gt; "Export My Data." You can permanently erase your diary, watchlist, ratings, and rank — on this device and in your iCloud sync — from Settings &gt; "Delete My Data." Deleting your account. Settings &gt; Account &gt; Delete Account permanently deletes your account from our server straight away — your email address, password hash, sign-in sessions, and all your Friends data (profile, shared list, friendships, blocks, invites, picks and settle questions). Your friends stop seeing you immediately.</p>
+  <p>You can export a CSV copy of your diary and watchlist at any time from Settings &gt; "Export My Data." You can permanently erase your diary, watchlist, ratings, and rank — on this device and in your iCloud sync — from Settings &gt; "Delete My Data." Deleting your account. Settings &gt; Account &gt; Delete Account permanently deletes your account from our server straight away — your email address, password hash, sign-in sessions, push tokens, and all your Friends data (profile, shared list, friendships, blocks, invites, picks, settle questions and watched-together tags). Your friends stop seeing you immediately.</p>
   <p>Turning Friends off. Turning off "Share my rankings with friends" hides your list from friends straight away; hiding a single film removes it from what friends see.</p>
   <p>Reports. If you report someone, your name is removed from the report when you delete your account. Reports about a user are kept after they are resolved for up to 12 months, so we can spot repeat abuse, then deleted.</p>
   <p>Community scores. Turning them off in Settings deletes everything your phone has sent.</p>
