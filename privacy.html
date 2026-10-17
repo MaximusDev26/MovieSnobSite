@@ -21,7 +21,7 @@
 
   <h2>1. Who We Are</h2>
   <p>Movie Snob is made by Maximus Development LLC, a small independent company in Texas. This policy explains what information the App touches, how it is used, and what choices you have. Where this policy says "we" or "us," it means Maximus Development LLC.</p>
-  <p>The short version: your movie library stays on your phone and in your own iCloud. If you choose to create an account, we keep your email address so you can sign in. If you also choose to turn on Friends, we keep the small piece of your list you have agreed to share with the friends you accept. Nothing is public.</p>
+  <p>The short version: your movie library stays on your phone and in your own iCloud. If you choose to create an account, we keep your email address so you can sign in. If you also choose to turn on Friends, we keep the small piece of your list you have agreed to share with the friends you accept. <!-- LEGAL-AUDIT 2026-10-17 -->Nothing is public unless you choose to share a link or post a feature idea (Section 4).</p>
 
   <h2>2. Information We Collect</h2>
   <p>Sign-in information (optional). Movie Snob offers Sign in with Apple so you can sync across devices. This is optional — the App works fully without it. If you do sign in, Apple shares your name and email, or a private relay address if you choose to hide your email. That information is stored only on your device and is never sent to us, to our analytics tool, or to any third party — unless you create a Movie Snob account with it (next paragraph).</p>
@@ -39,12 +39,15 @@
   <p>If sync is off, your data stays on your device only.</p>
 
   <h2>4. Our Server</h2>
-  <p>We operate a small server, hosted by Cloudflare, that does five things.</p>
+  <p>We operate a small server, hosted by Cloudflare, <!-- LEGAL-AUDIT 2026-10-17 -->that does the things below.</p>
   <p>Movie information relay. Movie information requests from your device go through our server, which forwards them to The Movie Database and returns the results, so our access credentials are not embedded in the App. The relay receives your device's IP address and the movie or search term you are looking up — not your name, email, Apple ID, movie logs, ratings, notes, or watchlist. We do not keep logs of these requests. To protect the service from abuse, each IP address is limited to a number of requests per minute; that count is held in memory only briefly and is not stored.</p>
   <p>Accounts. If you create an account, the server stores the account information in Section 2, plus the sign-in sessions for your devices (which expire after 60 days and record the app's device type) and short-lived counters that include your IP address, used to slow down password guessing. Expired sessions and counters are cleared out automatically.</p>
   <p>Friends. If you turn on Friends, the server stores the Friends information in Section 2 and shows your shared list only to people you have both accepted as friends, who have not been blocked by either of you, and only while "Share my rankings with friends" is on.</p>
   <p>Community scores. The anonymous scores in Section 2, stored under a scrambled random identifier.</p>
   <p>Notifications. If you use Friends and allow notifications, we store the push token Apple issues for your phone, your time zone (so we never notify you between 10 PM and 8 AM) and a record of what we sent, linked to your account, so we can tell you when a friend adds you, accepts, tags you, or sends you a pick or a question. Apple delivers them; they contain names and film titles only, never scores. Turning notifications off, signing out or deleting your account removes the token.</p>
+  <!-- LEGAL-AUDIT 2026-10-17 -->
+  <p>Share links. If you share one of your rankings as a link, anyone who opens that link can see your display name, that one film, its place in your ranking and its score. The link itself carries the card; we do not store it.</p>
+  <p>Feedback and feature ideas. If you send feedback or post an idea in the Feature Wishlist, we store what you write, a random identifier created on your phone (used only to limit spam and count upvotes, never linked to your account) and, for feedback, the app version. Feature ideas are shown to everyone who opens the Feature Wishlist, without your name; feedback is seen only by us. Please don’t include personal details. To have something you wrote removed, email moviesnob@icloud.com.</p>
 
   <h2>5. Third-Party Services We Use</h2>
 
@@ -91,7 +94,7 @@
   <div class="card">
     <div class="service">PostHog</div>
     <div class="detail">Product analytics</div>
-    <div class="detail">Receives: usage events not linked to your identity — see Section 2</div>
+    <div class="detail">Receives: usage events not linked to your identity — see Section 2. Like any internet service, it also receives your device’s IP address <!-- LEGAL-AUDIT 2026-10-17 --></div>
   </div>
   <div class="card">
     <div class="service">Google AdMob</div>
@@ -124,7 +127,7 @@
   <p>You can export a CSV copy of your diary and watchlist at any time from Settings &gt; "Export My Data." You can permanently erase your diary, watchlist, ratings, and rank — on this device and in your iCloud sync — from Settings &gt; "Delete My Data." Deleting your account. Settings &gt; Account &gt; Delete Account permanently deletes your account from our server straight away — your email address, password hash, sign-in sessions, push tokens, and all your Friends data (profile, shared list, friendships, blocks, invites, picks, settle questions and watched-together tags). Your friends stop seeing you immediately.</p>
   <p>Turning Friends off. Turning off "Share my rankings with friends" hides your list from friends straight away; hiding a single film removes it from what friends see.</p>
   <p>Reports. If you report someone, your name is removed from the report when you delete your account. Reports about a user are kept after they are resolved for up to 12 months, so we can spot repeat abuse, then deleted.</p>
-  <p>Community scores. Turning them off in Settings deletes everything your phone has sent.</p>
+  <p>Community scores. Turning them off in Settings deletes everything your phone has sent. <!-- LEGAL-AUDIT 2026-10-17 --> If you use “Delete My Data” without turning them off first, the scores stay as anonymous film ratings: the random identifier on your phone is erased, so they can no longer be linked to you or to any device.</p>
   <p>Two things that button cannot reach, so that you know. Product analytics events are not linked to your identity, which means we cannot pick out one person's events to delete — but you can turn analytics off entirely in Settings, and we will stop collecting them. And any technical data Google holds from serving ads is governed by Google's own privacy policy and controls.</p>
   <p>We do not retain your precise location at all — see Section 7. Relay request logs are covered in Section 4.</p>
 
@@ -166,7 +169,7 @@
   <h2>14. Contact</h2>
   <p>Questions about this policy: <a href="mailto:moviesnob@icloud.com">moviesnob@icloud.com</a>.</p>
 
-  <div class="footnote">This Privacy Policy was drafted and reviewed with AI assistance (Claude, by Anthropic), including a direct check of the app's actual code and data flows (TMDB proxy, CloudKit, Sign in with Apple, RevenueCat, PostHog, location use, and AdMob), as a structured legal-drafting pass for a solo indie developer — it is not the product of review by a licensed attorney, and this AI-assisted pass is not a substitute for one. Section 10 (Your Privacy Choices) reflects a good-faith, baseline approach for a solo developer with no dedicated compliance program or EU/UK legal presence — it is not a certification of compliance. Before Movie Snob expands beyond the United States and Canada, this policy and the underlying data practices should be reviewed by a licensed attorney in the developer's jurisdiction (Texas, US) familiar with the regimes of any new region.</div>
+  <div class="footnote">This Privacy Policy was drafted and reviewed with AI assistance (Claude, by Anthropic), including a direct check of the app's actual code and data flows (TMDB proxy, CloudKit, Sign in with Apple, RevenueCat, PostHog, location use, and AdMob), as a structured legal-drafting pass for a solo indie developer — it is not the product of review by a licensed attorney, and this AI-assisted pass is not a substitute for one. Section 10 (Your Privacy Choices) reflects a good-faith, baseline approach for a solo developer with no dedicated compliance program or EU/UK legal presence — it is not a certification of compliance. <!-- LEGAL-AUDIT 2026-10-17 -->It has not yet been reviewed by a licensed attorney in any of the regions where the App is available.</div>
 </div>
 </body>
 </html>
